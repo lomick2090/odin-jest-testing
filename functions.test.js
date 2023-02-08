@@ -1,4 +1,4 @@
-import {sayHello, capitalize, reverseString, calculator} from './functions'
+import {sayHello, capitalize, reverseString, calculator, caesarCipher} from './functions'
 
 test('say hello', () => {
     expect(sayHello()).toBe('hello');
@@ -32,3 +32,14 @@ test('calculator 2', () => {
     expect(calculator.divide(calculator.add(6,4), calculator.subtract(8,6))).toBe(5);
 });
 
+test('cipher', () => {
+    expect(caesarCipher('abcde', 1)).toBe('bcdef');
+});
+
+test('cipher 2', ()=> {
+    expect(caesarCipher('z..ZZ,xa', 3)).toBe('c..CC,ad');
+});
+
+test('cipher 3', () => {
+    expect(caesarCipher('Z', 9)).toBe('I');
+})

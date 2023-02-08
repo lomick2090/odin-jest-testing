@@ -33,6 +33,25 @@ const calculator = {
     subtract: (x,y) => {
         return x - y;
     }
-}
+};
 
-export {capitalize, sayHello, reverseString, calculator}
+function caesarCipher(string, offset) {
+    let working = string.split('');
+    
+    for (let i = 0; i < working.length; i++) {
+        if (working[i].charCodeAt(0) < 65 ||  (working[i].charCodeAt(0) < 97 && working[i].charCodeAt(0) > 90)  || working[i].charCodeAt(0) > 122 ) {
+            continue;
+        } 
+
+        let newCode = working[i].charCodeAt(0) + offset;
+        if (newCode > 122 || (newCode > 90 && newCode < 97) || (offset >= 7 && newCode >= 97)) {
+            newCode = newCode - 26;
+        };
+
+        working[i] = String.fromCharCode(newCode);
+    }
+
+    return working.join('');
+};
+
+export {capitalize, sayHello, reverseString, calculator, caesarCipher}
