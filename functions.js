@@ -11,4 +11,28 @@ function capitalize(string) {
     return working.join('');
 }
 
-export {capitalize, sayHello}
+function reverseString(string) {
+    let working = string.split('');
+    let working2 = [];
+    for (let i = 0; i<working.length; i++) {
+        working2[i] = working[(working.length-1)-i];
+    }
+    return working2.join('');
+}
+
+const calculator = {
+    multiply: (x, y) => {
+        return x*y;
+    },
+    divide: (x,y) => {
+        return x / y;
+    },
+    add: (x,y) => {
+        return x + y;
+    },
+    subtract: (x,y) => {
+        return x - y;
+    }
+}
+
+export {capitalize, sayHello, reverseString, calculator}
