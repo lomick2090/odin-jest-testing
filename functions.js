@@ -54,4 +54,34 @@ function caesarCipher(string, offset) {
     return working.join('');
 };
 
-export {capitalize, sayHello, reverseString, calculator, caesarCipher}
+function analyzeArray(arr) {
+    let findAverage = (arr) => {
+        let sum = 0;
+        arr.forEach(number => {sum = sum + number});
+
+        return (sum / arr.length);
+    };
+
+    let findMin = (arr) => {
+        let min = arr[0];
+        arr.forEach(number => {(number < min) ? min = number : min = min})
+        
+        return min;
+    };
+
+    let findMax = (arr) => {
+        let max = arr[0];
+        arr.forEach(number => {(number > max) ? max = number : max = max })
+
+        return max;
+    };
+
+    return {
+        min: findMin(arr),
+        max: findMax(arr),
+        average: findAverage(arr),
+        length: arr.length
+    }
+}
+
+export {capitalize, sayHello, reverseString, calculator, caesarCipher, analyzeArray}
